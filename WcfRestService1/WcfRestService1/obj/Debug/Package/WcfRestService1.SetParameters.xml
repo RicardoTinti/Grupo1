@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/WcfRestService1_deploy" />
+  <setParameter name="webserviceEntities-Web.config Connection String" value="metadata=res://*/ADO.csdl|res://*/ADO.ssdl|res://*/ADO.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=localhost;user id=root;persistsecurityinfo=True;password=admin;database=webservice&quot;" />
+</parameters>

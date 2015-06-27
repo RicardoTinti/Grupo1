@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\Rick\documents\visual studio 2010\Projects\WcfRestService1\WcfRestService1\obj\Debug\Package\PackageTmp" />
+  <setAcl path="C:\Users\Rick\documents\visual studio 2010\Projects\WcfRestService1\WcfRestService1\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\Rick\documents\visual studio 2010\Projects\WcfRestService1\WcfRestService1\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

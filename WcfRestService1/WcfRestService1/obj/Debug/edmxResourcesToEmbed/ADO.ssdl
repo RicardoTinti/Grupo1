@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="corredor" EntityType="Model.Store.corredor" store:Type="Tables" Schema="webservice" />
+    <EntitySet Name="corrida" EntityType="Model.Store.corrida" store:Type="Tables" Schema="webservice" />
+    <EntitySet Name="inscricao" EntityType="Model.Store.inscricao" store:Type="Tables" Schema="webservice" />
+    <AssociationSet Name="fk_Corredor_has_Corrida_Corredor" Association="Model.Store.fk_Corredor_has_Corrida_Corredor">
+      <End Role="corredor" EntitySet="corredor" />
+      <End Role="inscricao" EntitySet="inscricao" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Corredor_has_Corrida_Corrida1" Association="Model.Store.fk_Corredor_has_Corrida_Corrida1">
+      <End Role="corrida" EntitySet="corrida" />
+      <End Role="inscricao" EntitySet="inscricao" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="corredor">
+    <Key>
+      <PropertyRef Name="idCorredor" />
+    </Key>
+    <Property Name="idCorredor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="data_nascimento" Type="datetime" />
+    <Property Name="cidade" Type="varchar" MaxLength="45" />
+    <Property Name="estado" Type="varchar" MaxLength="45" />
+    <Property Name="status" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="corrida">
+    <Key>
+      <PropertyRef Name="idCorrida" />
+    </Key>
+    <Property Name="idCorrida" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="descricao" Type="varchar" MaxLength="200" />
+    <Property Name="data_corrida" Type="datetime" />
+    <Property Name="cidade" Type="varchar" MaxLength="45" />
+    <Property Name="estado" Type="varchar" MaxLength="45" />
+    <Property Name="valor" Type="double" />
+    <Property Name="status" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="inscricao">
+    <Key>
+      <PropertyRef Name="Corredor_idCorredor" />
+      <PropertyRef Name="Corrida_idCorrida" />
+      <PropertyRef Name="idInscricao" />
+    </Key>
+    <Property Name="Corredor_idCorredor" Type="int" Nullable="false" />
+    <Property Name="Corrida_idCorrida" Type="int" Nullable="false" />
+    <Property Name="idInscricao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="status_pagamento" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <Association Name="fk_Corredor_has_Corrida_Corredor">
+    <End Role="corredor" Type="Model.Store.corredor" Multiplicity="1" />
+    <End Role="inscricao" Type="Model.Store.inscricao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="corredor">
+        <PropertyRef Name="idCorredor" />
+      </Principal>
+      <Dependent Role="inscricao">
+        <PropertyRef Name="Corredor_idCorredor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Corredor_has_Corrida_Corrida1">
+    <End Role="corrida" Type="Model.Store.corrida" Multiplicity="1" />
+    <End Role="inscricao" Type="Model.Store.inscricao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="corrida">
+        <PropertyRef Name="idCorrida" />
+      </Principal>
+      <Dependent Role="inscricao">
+        <PropertyRef Name="Corrida_idCorrida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

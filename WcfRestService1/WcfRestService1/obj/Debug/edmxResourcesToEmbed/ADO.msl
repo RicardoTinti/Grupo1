@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="webserviceEntities">
+    <EntitySetMapping Name="corredor">
+      <EntityTypeMapping TypeName="Model.corredor">
+        <MappingFragment StoreEntitySet="corredor">
+          <ScalarProperty Name="idCorredor" ColumnName="idCorredor" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="data_nascimento" ColumnName="data_nascimento" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="corrida">
+      <EntityTypeMapping TypeName="Model.corrida">
+        <MappingFragment StoreEntitySet="corrida">
+          <ScalarProperty Name="idCorrida" ColumnName="idCorrida" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="data_corrida" ColumnName="data_corrida" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inscricao">
+      <EntityTypeMapping TypeName="Model.inscricao">
+        <MappingFragment StoreEntitySet="inscricao">
+          <ScalarProperty Name="Corredor_idCorredor" ColumnName="Corredor_idCorredor" />
+          <ScalarProperty Name="Corrida_idCorrida" ColumnName="Corrida_idCorrida" />
+          <ScalarProperty Name="idInscricao" ColumnName="idInscricao" />
+          <ScalarProperty Name="status_pagamento" ColumnName="status_pagamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="fk_Corredor_has_Corrida_Corredor" TypeName="Model.fk_Corredor_has_Corrida_Corredor" StoreEntitySet="inscricao">
+      <EndProperty Name="corredor">
+        <ScalarProperty Name="idCorredor" ColumnName="Corredor_idCorredor" />
+      </EndProperty>
+      <EndProperty Name="inscricao">
+        <ScalarProperty Name="Corredor_idCorredor" ColumnName="Corredor_idCorredor" />
+        <ScalarProperty Name="Corrida_idCorrida" ColumnName="Corrida_idCorrida" />
+        <ScalarProperty Name="idInscricao" ColumnName="idInscricao" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="fk_Corredor_has_Corrida_Corrida1" TypeName="Model.fk_Corredor_has_Corrida_Corrida1" StoreEntitySet="inscricao">
+      <EndProperty Name="corrida">
+        <ScalarProperty Name="idCorrida" ColumnName="Corrida_idCorrida" />
+      </EndProperty>
+      <EndProperty Name="inscricao">
+        <ScalarProperty Name="Corredor_idCorredor" ColumnName="Corredor_idCorredor" />
+        <ScalarProperty Name="Corrida_idCorrida" ColumnName="Corrida_idCorrida" />
+        <ScalarProperty Name="idInscricao" ColumnName="idInscricao" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

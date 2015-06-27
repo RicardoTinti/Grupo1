@@ -1,0 +1,7 @@
+C:\Users\Rick\Documents\Visual Studio 2010\Projects\WcfRestService1\WebServiceTest\bin\Debug\WebServiceTest.dll
+C:\Users\Rick\Documents\Visual Studio 2010\Projects\WcfRestService1\WebServiceTest\bin\Debug\WebServiceTest.pdb
+C:\Users\Rick\Documents\Visual Studio 2010\Projects\WcfRestService1\WebServiceTest\bin\Debug\WcfRestService1.dll
+C:\Users\Rick\Documents\Visual Studio 2010\Projects\WcfRestService1\WebServiceTest\bin\Debug\WcfRestService1.pdb
+C:\Users\Rick\Documents\Visual Studio 2010\Projects\WcfRestService1\WebServiceTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rick\Documents\Visual Studio 2010\Projects\WcfRestService1\WebServiceTest\obj\Debug\WebServiceTest.dll
+C:\Users\Rick\Documents\Visual Studio 2010\Projects\WcfRestService1\WebServiceTest\obj\Debug\WebServiceTest.pdb

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="501ad6ec-e51b-418d-b5ed-6580c4cfb9d7" name="Rick@RICK-PC 2015-06-24 02:00:02" runUser="Rick-PC\Rick" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="d8c93d2e-84f3-4b5d-943e-6cf5476d15bf">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Rick_RICK-PC 2015-06-24 02_00_02">
+      <DeploymentItem filename="C:\Users\Rick\documents\visual studio 2010\Projects\WcfRestService1\WcfRestService1\bin\WcfRestService1.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2015-06-24T02:00:02.6511255-03:00" queuing="2015-06-24T02:00:02.6671264-03:00" start="2015-06-24T02:00:02.6891277-03:00" finish="2015-06-24T02:00:27.4625446-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ExcluiCorredorTest" storage="c:\users\rick\documents\visual studio 2010\projects\wcfrestservice1\webservicetest\bin\debug\webservicetest.dll" id="fe3d67b9-f24f-b91e-89f2-c2a147922167">
+      <Execution id="da31c869-861e-4d69-9a08-461987882f87" />
+      <TestMethod codeBase="C:/Users/Rick/documents/visual studio 2010/Projects/WcfRestService1/WebServiceTest/bin/Debug/WebServiceTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="WebServiceTest.CorredorControllerTest, WebServiceTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ExcluiCorredorTest" />
+      <AspNet webSiteUrl="http://localhost:64670/NecessarioParaPoderRodarTestes.aspx">
+        <Host pathToWebApp="C:\Users\Rick\Documents\Visual Studio 2010\Projects\WcfRestService1\WcfRestService1" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="fe3d67b9-f24f-b91e-89f2-c2a147922167" executionId="da31c869-861e-4d69-9a08-461987882f87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="da31c869-861e-4d69-9a08-461987882f87" testId="fe3d67b9-f24f-b91e-89f2-c2a147922167" testName="ExcluiCorredorTest" computerName="RICK-PC" duration="00:00:01.4941379" startTime="2015-06-24T02:00:02.6991282-03:00" endTime="2015-06-24T02:00:27.3235367-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da31c869-861e-4d69-9a08-461987882f87">
+    </UnitTestResult>
+  </Results>
+</TestRun>

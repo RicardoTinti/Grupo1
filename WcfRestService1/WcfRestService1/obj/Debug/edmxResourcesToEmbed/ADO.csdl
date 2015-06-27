@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityContainer Name="webserviceEntities">
+    <EntitySet Name="corredor" EntityType="Model.corredor" />
+    <EntitySet Name="corrida" EntityType="Model.corrida" />
+    <EntitySet Name="inscricao" EntityType="Model.inscricao" />
+    <AssociationSet Name="fk_Corredor_has_Corrida_Corredor" Association="Model.fk_Corredor_has_Corrida_Corredor">
+      <End Role="corredor" EntitySet="corredor" />
+      <End Role="inscricao" EntitySet="inscricao" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Corredor_has_Corrida_Corrida1" Association="Model.fk_Corredor_has_Corrida_Corrida1">
+      <End Role="corrida" EntitySet="corrida" />
+      <End Role="inscricao" EntitySet="inscricao" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="corredor">
+    <Key>
+      <PropertyRef Name="idCorredor" />
+    </Key>
+    <Property Name="idCorredor" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="data_nascimento" Type="DateTime" />
+    <Property Name="cidade" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="estado" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="String" />
+    <NavigationProperty Name="inscricao" Relationship="Model.fk_Corredor_has_Corrida_Corredor" FromRole="corredor" ToRole="inscricao" />
+  </EntityType>
+  <EntityType Name="corrida">
+    <Key>
+      <PropertyRef Name="idCorrida" />
+    </Key>
+    <Property Name="idCorrida" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="descricao" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="data_corrida" Type="DateTime" />
+    <Property Name="cidade" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="estado" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="valor" Type="Double" />
+    <Property Name="status" Type="String" />
+    <NavigationProperty Name="inscricao" Relationship="Model.fk_Corredor_has_Corrida_Corrida1" FromRole="corrida" ToRole="inscricao" />
+  </EntityType>
+  <EntityType Name="inscricao">
+    <Key>
+      <PropertyRef Name="Corredor_idCorredor" />
+      <PropertyRef Name="Corrida_idCorrida" />
+      <PropertyRef Name="idInscricao" />
+    </Key>
+    <Property Name="Corredor_idCorredor" Type="Int32" Nullable="false" />
+    <Property Name="Corrida_idCorrida" Type="Int32" Nullable="false" />
+    <Property Name="idInscricao" Type="Int32" Nullable="false" />
+    <Property Name="status_pagamento" Type="String" />
+    <NavigationProperty Name="corredor" Relationship="Model.fk_Corredor_has_Corrida_Corredor" FromRole="inscricao" ToRole="corredor" />
+    <NavigationProperty Name="corrida" Relationship="Model.fk_Corredor_has_Corrida_Corrida1" FromRole="inscricao" ToRole="corrida" />
+  </EntityType>
+  <Association Name="fk_Corredor_has_Corrida_Corredor">
+    <End Role="corredor" Type="Model.corredor" Multiplicity="1" />
+    <End Role="inscricao" Type="Model.inscricao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="corredor">
+        <PropertyRef Name="idCorredor" />
+      </Principal>
+      <Dependent Role="inscricao">
+        <PropertyRef Name="Corredor_idCorredor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Corredor_has_Corrida_Corrida1">
+    <End Role="corrida" Type="Model.corrida" Multiplicity="1" />
+    <End Role="inscricao" Type="Model.inscricao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="corrida">
+        <PropertyRef Name="idCorrida" />
+      </Principal>
+      <Dependent Role="inscricao">
+        <PropertyRef Name="Corrida_idCorrida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

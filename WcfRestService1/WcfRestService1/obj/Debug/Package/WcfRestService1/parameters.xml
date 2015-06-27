@@ -1,0 +1,9 @@
+﻿<parameters>
+  <parameter name="IIS Web Application Name" defaultValue="Default Web Site/WcfRestService1_deploy" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Rick\\documents\\visual\ studio\ 2010\\Projects\\WcfRestService1\\WcfRestService1\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Rick\\documents\\visual\ studio\ 2010\\Projects\\WcfRestService1\\WcfRestService1\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="webserviceEntities-Web.config Connection String" description="webserviceEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ADO.csdl|res://*/ADO.ssdl|res://*/ADO.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=localhost;user id=root;persistsecurityinfo=True;password=admin;database=webservice&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='webserviceEntities']/@connectionString" />
+  </parameter>
+</parameters>
